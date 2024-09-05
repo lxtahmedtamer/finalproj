@@ -1,0 +1,87 @@
+.App {
+    border: 1px solid #3d3d3d;
+    margin: 50px 30px;
+    padding: 25px 15px;
+    background-color: #f0f8ff; /* Light blue background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds a shadow */
+    border-radius: 10px; /* Rounded corners */
+    max-width: 400px; /* Set a max width for better layout */
+    font-family: 'Helvetica Neue', Arial, sans-serif; /* Set a clean, modern font */
+}
+
+.to-do-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Adds space between list items */
+}
+
+.to-do-container ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; /* Removes default bullet points */
+}
+
+.to-do-container ul li {
+    width: 170px;
+    overflow-wrap: break-word;
+    list-style-type: none;
+    padding: 10px;
+    background-color: #fff7e0; /* Soft yellow background for each item */
+    border: 1px solid #f8a488; /* Light orange border */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.to-do-container ul li:hover {
+    background-color: #ffdab9; /* Peach hover effect */
+    transform: scale(1.03); /* Slightly enlarges on hover */
+}
+
+.done {
+    text-decoration: line-through;
+    color: #7d7d7d; /* Gray out completed items */
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.trash {
+    cursor: pointer;
+    color: #ff6b6b; /* Bright red color for the trash icon */
+    font-size: 18px;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.trash:hover {
+    color: #ff3b3b; /* Darker red on hover */
+    transform: scale(1.2); /* Enlarge on hover */
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #4caf50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #3d3d3d;
+    border-radius: 5px;
+    width: calc(100% - 30px); /* Input stretches the width of the container */
+    margin-bottom: 15px;
+    background-color: #e0f7fa; /* Light teal background for input */
+    color: #333; /* Darker text color */
+}
