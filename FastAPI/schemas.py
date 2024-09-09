@@ -2,6 +2,7 @@ from pydantic import BaseModel
 
 class ToDoBase(BaseModel):
     text: str
+    completed: bool
 
 class ToDoCreate(ToDoBase):
     pass
