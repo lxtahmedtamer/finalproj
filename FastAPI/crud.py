@@ -3,12 +3,24 @@ import models
 from models import ToDoItem
 import schemas
 from schemas import ToDoBase, ToDoCreate,ToDo
+###
+#def get_todos(db: Session):
+ #   return db.query(models.ToDoItem).all()
 
-def get_todos(db: Session):
-    return db.query(models.ToDoItem).all()
+#def create_todo_item(db: Session, todo: schemas.ToDoCreate):
+   # db_todo = models.ToDoItem(text=todo.text,completed=todo.completed)
+  #  db.add(db_todo)
+ #   db.commit()
+#    db.refresh(db_todo)
+#    return db_todo
+#
 
-def create_todo_item(db: Session, todo: schemas.ToDoCreate):
-    db_todo = models.ToDoItem(text=todo.text,completed=todo.completed)
+
+def get_todos_by_user(db: Session, user_id: int):
+    return db.query(models.ToDo).filter(models.ToDo.owner_id == user_id).all()
+
+def create_todo_item(db: Session, todo: schemas.ToDoCreate, user_id: int):
+    db_todo = models.ToDo(**todo.dict(), owner_id=user_id)
     db.add(db_todo)
     db.commit()
     db.refresh(db_todo)
